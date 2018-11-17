@@ -1,4 +1,4 @@
-package com.afaf.demospringboot2;
+package com.afaf.agendaproductora;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Demospringboot2ApplicationTests {
+public class AgendaProductoraApplicationTests {
 
 	@Test
 	public void contextLoads() {
