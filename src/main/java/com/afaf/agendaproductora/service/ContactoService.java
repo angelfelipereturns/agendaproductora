@@ -18,20 +18,37 @@ public class ContactoService {
 	private ContactoRepository contactoRepository;
 	
 	
-	public List<Contacto> contactoTodos() {
-		return contactoRepository.findAll(Sort.by(Order.by("nombre")));
+	public List<Contacto> contactoTodos() throws Exception {
+		try {
+			return contactoRepository.findAll(Sort.by(Order.by("nombre")));
+		} catch (Exception e) {
+			throw new Exception(e);
+		}
 	}
 	
-	public Optional<Contacto> contactoPorId(Long id) {
-		return contactoRepository.findById(id);
+	public Optional<Contacto> contactoPorId(final Long id) throws Exception {
+		try {
+			return contactoRepository.findById(id);
+		} catch (Exception e) {
+			throw new Exception(e);
+		}
 	}
 	
-	public Contacto contactoSave(Contacto contacto) {
-		return contactoRepository.save(contacto);
+	public Contacto contactoSave(final Contacto contacto) throws Exception {
+		try {
+			return contactoRepository.save(contacto);
+		} catch (Exception e) {
+			throw new Exception(e);
+		}
 	}
 	
-	public void contactoBorrar(Long id) {
-		contactoRepository.deleteById(id);
+	public boolean contactoBorrar(final Long id) throws Exception {
+		try {
+			contactoRepository.deleteById(id);
+			return true;
+		} catch (Exception e) {
+			throw new Exception(e);
+		}
 	}
 	
 }
